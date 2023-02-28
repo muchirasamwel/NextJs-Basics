@@ -7,8 +7,8 @@ import pageStyles from '../../styles/first-post.module.css'
 
 const FirstPost = () => {
   return (
-    <div className={pageStyles.container}>
-      <div>
+    <div>
+      <div className='flex justify-center align-middle w-screen'>
         <Head>
           <title>Posts head</title>
         </Head>
@@ -19,19 +19,69 @@ const FirstPost = () => {
             console.log(`script loaded correctly, window.FB has been populated`)
           }
         />
-        <main>
+        <main className='p-5 bg-white-500'>
           <Image
-            className={pageStyles.image}
+            className='rounded-lg shadow-lg object-cover'
+            style={{
+              width: 300,
+              height: 200
+            }}
             src={'/deb.png'}
             // src={'https://random.imagecdn.app/500/500'}
-            width={200}
-            height={50}
+            width={300}
+            height={200}
           />
           <div className={pageStyles.heading}>First Post</div>
-          <div className={pageStyles.body}>
+          <div className='bg-white hover:bg-blue-600 hover:text-white hover:cursor-pointer hover:border-opacity-0 flex justify-center py-2 rounded-lg border-2 border-blue-700'>
             <Link href={'/'}>Back to home</Link>
           </div>
         </main>
+      </div>
+      <div className=' w-full h-full flex flex-wrap justify-center'>
+        <Image
+          className='rounded-lg shadow-lg object-cover m-5'
+          style={{
+            width: 300,
+            height: 200
+          }}
+          // src={'/deb.png'}
+          src={'https://random.imagecdn.app/500/500'}
+          width={300}
+          height={200}
+        />
+        <Image
+          className='rounded-lg shadow-lg object-cover m-5'
+          style={{
+            width: 300,
+            height: 200
+          }}
+          // src={'/deb.png'}
+          src={'https://random.imagecdn.app/500/500'}
+          width={300}
+          height={200}
+        />
+        <Image
+          className='rounded-lg shadow-lg object-cover m-5'
+          style={{
+            width: 300,
+            height: 200
+          }}
+          // src={'/deb.png'}
+          src={'https://random.imagecdn.app/500/500'}
+          width={300}
+          height={200}
+        />
+        <Image
+          className='rounded-lg shadow-lg object-cover m-5'
+          style={{
+            width: 300,
+            height: 200
+          }}
+          // src={'/deb.png'}
+          src={'https://random.imagecdn.app/500/500'}
+          width={300}
+          height={200}
+        />
       </div>
     </div>
   )
