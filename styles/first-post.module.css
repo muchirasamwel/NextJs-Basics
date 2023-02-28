@@ -1,0 +1,30 @@
+.heading {
+  color: blue;
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-align: center;
+  font-weight: 600;
+}
+
+.body {
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit:cover;
+}
+
+.container{
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+  display: flex;
+  justify-content: center;
+
+}
