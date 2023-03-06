@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
-export default function Home () {
+export default function Home (props) {
+  console.log({ props })
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +13,7 @@ export default function Home () {
 
       <main>
         <h1 className={styles.title}>
-          Inna <Link href={'/posts/first-post'}> Next.js!</Link>
+          {props.name} Inna <Link href={'/posts/first-post'}> Next.js!</Link>
         </h1>
       </main>
 
@@ -79,4 +80,10 @@ export default function Home () {
       `}</style>
     </div>
   )
+}
+
+export const getStaticProps = () => {
+  // You can call external API or get your data from the file system here
+  // and pass the data here to the component via props
+  return { props: { name: 'John', image: 'Abc image' } }
 }
