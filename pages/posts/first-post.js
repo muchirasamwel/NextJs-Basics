@@ -4,8 +4,11 @@ import Link from 'next/link'
 import Script from 'next/script'
 import React from 'react'
 import pageStyles from '../../styles/first-post.module.css'
+import Blog from './blog'
+import data from '../../mockdata/posts.json'
 
-const FirstPost = () => {
+const FirstPost = props => {
+  console.log({ data: props.allPosts })
   return (
     <div>
       <div className='flex justify-center align-middle w-screen'>
@@ -37,8 +40,11 @@ const FirstPost = () => {
           </div>
         </main>
       </div>
-      <div className=' w-full h-full flex flex-wrap justify-center'>
-        <Image
+      <div className=' w-full h-full flex flex-wrap justify-around'>
+        {props.allPosts.map(content => {
+          return <Blog blog={content} />
+        })}
+        {/* <Image
           className='rounded-lg shadow-lg object-cover m-5'
           style={{
             width: 300,
@@ -48,43 +54,29 @@ const FirstPost = () => {
           src={'https://random.imagecdn.app/500/500'}
           width={300}
           height={200}
-        />
-        <Image
-          className='rounded-lg shadow-lg object-cover m-5'
-          style={{
-            width: 300,
-            height: 200
-          }}
-          // src={'/deb.png'}
-          src={'https://random.imagecdn.app/500/500'}
-          width={300}
-          height={200}
-        />
-        <Image
-          className='rounded-lg shadow-lg object-cover m-5'
-          style={{
-            width: 300,
-            height: 200
-          }}
-          // src={'/deb.png'}
-          src={'https://random.imagecdn.app/500/500'}
-          width={300}
-          height={200}
-        />
-        <Image
-          className='rounded-lg shadow-lg object-cover m-5'
-          style={{
-            width: 300,
-            height: 200
-          }}
-          // src={'/deb.png'}
-          src={'https://random.imagecdn.app/500/500'}
-          width={300}
-          height={200}
-        />
+        /> */}
       </div>
     </div>
   )
 }
 
 export default FirstPost
+
+export const getStaticProps = () => {
+  return {
+    props: {
+      allPosts: data
+    }
+  }
+}
+
+// export const getServerSideProps = ({ req, res }) => {
+//   res.setHeader(
+//     'Cache-Control',
+//     'public, s-maxage=10, stale-while-revalidate=59'
+//   )
+
+//   return {
+//     props: {}
+//   }
+// }
